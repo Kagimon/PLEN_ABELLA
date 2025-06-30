@@ -3,7 +3,10 @@ import mysql.connector
 
 
 def center(texto, comprimento, caractere):
-    return f"{int((comprimento - len(texto))/2) * str(caractere)}" + texto + f"{int((comprimento - len(texto))/2) * str(caractere)}"
+    if (comprimento - len(texto)) % 2 == 0:
+        return f"{int((comprimento - len(texto))/2) * str(caractere)}" + texto + f"{int((comprimento - len(texto))/2) * str(caractere)}"
+    else:
+        return f"{int((comprimento - len(texto))/2) * str(caractere)}" + texto + f"{int((comprimento - len(texto))/2) * str(caractere)}" + caractere
 
 #Definindo as cores do menu                      
 red = '\033[1;31m'
